@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="blank.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <title>angular</title>
+</head>
+
+<body>
+    <div class="container" ng-app="peace" ng-controller="personCtrl" ng-init="num = 0">
+        <div class="container_title">
+            <span>Speak</span>
+        </div>
+        <div class="container_inputs">
+            <span>Name:<input type="text" id="user"/></span></br>
+            <span>Message:<input type="text" id="field"/></span></br>
+            <button id="submit" onclick="writeUserData()">Send</button>
+        </div>
+        <div id="take"></div>
+    </div>
+
+</body>
+<script src="base.js"></script>
+
+</html>
