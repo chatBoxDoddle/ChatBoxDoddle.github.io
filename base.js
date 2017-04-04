@@ -32,11 +32,19 @@ function list_data() {
     pop = setInterval(readUserData, 1000);
 }
 
+function run(event) {
+    var x = event.keyCode;
+    if (x == 13)
+        writeUserData();
+
+}
+
 function writeUserData() {
     post++;
     var database = firebase.database().ref();
     database.child("Tag" + post).set(document.getElementById("user").value + ":" + document.getElementById("field").value);
     database.child("post").set(post);
+    document.getElementById("field").value = "";
 
 }
 
