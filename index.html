@@ -7,23 +7,26 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <title>angular</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Driver</title>
 </head>
 
 <body>
-    <div class="container" ng-app="peace" ng-controller="personCtrl" ng-init="num = 0">
-        <div class="container_title">
-            <span>Speak</span>
-        </div>
-        <div class="container_inputs">
-            <span>Name:<input type="text" id="user"/></span></br>
-            <span>Message:<input type="text" id="field" onkeydown="run(event)"/></span></br>
-            <button id="submit" onclick="writeUserData()">Send</button>
-        </div>
-        <div id="take"></div>
+    <div class="w3-container w3-blue">
+        <a href="login.html" style="float:right"><button id="submit" class="w3-btn w3-blue" style="margin:10px">Logout</button></a>
+        <h2>JotNotes</h2>
+
+    </div>
+    <div class="w3-container w3-white" style="margin:10px; margin-bottom:20px; padding:10px; height:300px; overflow-y: scroll;" id="take"></div>
+    <div class="w3-container">
+        <span>Name:<input class="w3-input" type="text" id="user"/></span></br>
+        <span>Message:<input class="w3-input" type="text" id="field" style="height:60px;"onkeydown="run(event)"/></span></br>
+        <button id="submit" class="w3-btn w3-blue" onclick="writeUserData() ">Send</button>
+        <button id="submit" class="w3-btn w3-blue" onclick="cleanUserData() ">Restart</button>
+    </div>
     </div>
 
 </body>
-<script src="base.js"></script>
+<script src="base.js "></script>
 
 </html>

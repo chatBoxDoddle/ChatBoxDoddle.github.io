@@ -23,7 +23,7 @@ function list_data() {
         post = snapshot.val();
         for (x = 1; x <= post; x++) {
             firebase.database().ref('Tag' + (x)).once('value').then(function(snapshot) {
-                document.getElementById("take").innerHTML += "<span>" + snapshot.val() + "</span></br>";
+                document.getElementById("take").innerHTML += "<span class='w3-tag w3-teal logs'>" + snapshot.val() + "</span></br>";
             });
             check = post;
         }
@@ -42,8 +42,17 @@ function run(event) {
 function writeUserData() {
     post++;
     var database = firebase.database().ref();
-    database.child("Tag" + post).set(document.getElementById("user").value + ":" + document.getElementById("field").value);
+    database.child("Tag" + post).set("@" + document.getElementById("user").value + ":" + document.getElementById("field").value);
     database.child("post").set(post);
+    document.getElementById("field").value = "";
+
+}
+
+function cleanUserData() {
+    post++;
+    var database = firebase.database().ref();
+    database.set("");
+    database.child("post").set("0");
     document.getElementById("field").value = "";
 
 }
@@ -55,7 +64,7 @@ function readUserData() {
     if (check < clip) {
         check = clip;
         firebase.database().ref('Tag' + (clip)).once('value').then(function(snapshot) {
-            document.getElementById("take").innerHTML += "<span>" + snapshot.val() + "</span></br>";
+            document.getElementById("take").innerHTML += "<span class='w3-tag w3-purple logs'>" + snapshot.val() + "</span></br>";
             var objDiv = document.getElementById("take");
             objDiv.scrollTop = objDiv.scrollHeight;
         });
